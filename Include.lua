@@ -89,9 +89,9 @@ end
 
 -- addPadding function
 function addPadding(instance, padding)
-	local instanceType, paddingType = typeof(instance), type(paddingType)
+	local instanceType, paddingType = typeof(instance), type(padding)
 	assert(instanceType == "Instance", ("addPadding, Instance expected at argument #1, got %s"):format(instanceType))
-	assert(paddingType == "table", ("addPadding, table expected at argument #2, got %s"):format(amountType))
+	assert(paddingType == "table", ("addPadding, table expected at argument #2, got %s"):format(paddingType))
 	
 	return new("UIPadding", instance, {
 		PaddingLeft = UDim.new(0, padding.left or 0),
