@@ -75,3 +75,27 @@ new = function(InstanceClass, InstanceParent, ...)
 	
 	return ReturnedInstance
 end
+
+
+-- addCornerRadius function
+function addCornerRadius(instance, amount)
+	local instanceType, amountType = typeof(instance), type(amount)
+	assert(instanceType == "Instance", ("addCornerRadius, Instance expected at argument #1, got %s"):format(instanceType))
+	assert(amountType == "number", ("addCornerRadius, number expected at argument #2, got %s"):format(amountType))
+	
+	return new("CornerRadius", instance, {CornerRadius = UDim.new(0, amount)})
+end
+
+-- addPadding function
+function addPadding(instance, padding)
+	local instanceType, paddingType = typeof(instance), type(paddingType)
+	assert(instanceType == "Instance", ("addPadding, Instance expected at argument #1, got %s"):format(instanceType))
+	assert(paddingType == "table", ("addPadding, table expected at argument #2, got %s"):format(amountType))
+	
+	return new("UIPadding", instance, {
+		PaddingLeft = UDim.new(0, padding.left or 0),
+		PaddingTop = UDim.new(0, padding.top or 0),
+		PaddingRight = UDim.new(0, padding.right or 0),
+		PaddingBottom = UDim.new(0, padding.bottom or 0),
+		})
+end
