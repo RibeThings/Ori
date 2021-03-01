@@ -6,7 +6,7 @@ Scripts of the Ori developer team (Roblox)
 		Buslock     : Remote spy
 		Lib         : UI library
 		Notes       : Notifications module
-		Include.lua : Something included in every script
+		Include.lua : A module that gives useful functions (like 30log lib)
 
 ## Developers
 ### ribet
