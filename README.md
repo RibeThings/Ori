@@ -2,10 +2,11 @@
 Scripts of the Ori developer team (Roblox)
 
 ## Scripts
-		Weirdshape : Admin commands
-		Buslock    : Remote spy
-		Lib        : UI library
-		Notes      : Notifications module
+		Weirdshape  : Admin commands
+		Buslock     : Remote spy
+		Lib         : UI library
+		Notes       : Notifications module
+		Include.lua : Something included in every script
 
 ## Developers
 ### ribet
