@@ -107,5 +107,5 @@ function addListLayout(instance, padding)
 	assert(instanceType == "Instance", ("addListLayout, Instance expected at argument #1, got %s"):format(instanceType))
 	assert(paddingType == "number", ("addListLayout, number expected at argument #2, got %s"):format(paddingType))
 	
-	return new("UIListLayout", instance, {Padding = UDim.new(0, padding)})
+	return new("UIListLayout", instance, {Padding = UDim.new(0, padding), SortOrder = Enum.SortOrder.LayoutOrder})
 end
