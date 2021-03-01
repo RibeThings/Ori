@@ -84,7 +84,7 @@ function addCornerRadius(instance, amount)
 	assert(instanceType == "Instance", ("addCornerRadius, Instance expected at argument #1, got %s"):format(instanceType))
 	assert(amountType == "number", ("addCornerRadius, number expected at argument #2, got %s"):format(amountType))
 	
-	return new("CornerRadius", instance, {CornerRadius = UDim.new(0, amount)})
+	return new("UICorner", instance, {CornerRadius = UDim.new(0, amount)})
 end
 
 -- addPadding function
