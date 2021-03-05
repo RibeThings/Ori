@@ -83,7 +83,7 @@ function newEvent()
         Bin = Instance.new("BindableEvent"),
         
         Fire = function(self, ...)
-            self.Bin:Fire()
+            self.Bin:Fire(...)
             return self
         end,
         
