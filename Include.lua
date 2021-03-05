@@ -77,6 +77,26 @@ new = function(InstanceClass, InstanceParent, ...)
 	return ReturnedInstance
 end
 
+-- newEvent
+function newEvent()
+    return {
+        Bin = Instance.new("BindableEvent"),
+        
+        Fire = function(self, ...)
+            self.Bin:Fire()
+            return self
+        end,
+        
+        Connect = function(self, ...)
+            return self.Bin.Event:Connect(...)
+        end,
+        
+        Wait = function(self, ...)
+            return self.Bin.Event:Wait()
+        end
+    }
+end
+--
 
 -- addCornerRadius function
 function addCornerRadius(instance, amount)
