@@ -77,6 +77,29 @@ new = function(InstanceClass, InstanceParent, ...)
 	return ReturnedInstance
 end
 
+-- newScreenGui
+function newScreenGui(name)
+    local GUI = Instance.new("ScreenGui")
+    GUI.ResetOnSpawn = false
+    GUI.Name = name or "_ORI"
+    
+    do
+    	local _LP = game:GetService("Players").LocalPlayer
+    
+    	local SUCCESS, RETURN = pcall(function()
+    		if syn then syn.protect_gui(GUI) end
+    
+    		GUI.Parent = (get_hidden_gui and get_hidden_gui()) or game:GetService("CoreGui")
+    	end)
+    
+    	if not SUCCESS then
+    		GUI.Parent = _LP:FindFirstChildOfClass("PlayerGui")
+    	end
+    end
+    
+    return GUI
+end
+
 -- newEvent
 function newEvent()
     return {
