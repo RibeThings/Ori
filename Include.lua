@@ -3,6 +3,7 @@
 --
 
 -- 30log
+if not NOT_OOP then
 class = (function()
 local next, assert, pairs, type, tostring, setmetatable, baseMt, _instances, _classes, _class = next, assert, pairs, type, tostring, setmetatable, {}, setmetatable({},{__mode = 'k'}), setmetatable({},{__mode = 'k'})
 local function assert_call_from_class(class, method) assert(_classes[class], ('Wrong method call. Expected class:%s.'):format(method)) end; local function assert_call_from_instance(instance, method) assert(_instances[instance], ('Wrong method call. Expected instance:%s.'):format(method)) end
@@ -30,8 +31,9 @@ _class = function(name, attr) local c = deep_copy(attr); _classes[c] = tostring(
 class._DESCRIPTION = '30 lines library for object orientation in Lua'; class._VERSION = '30log v1.2.0'; class._URL = 'http://github.com/Yonaba/30log'; class._LICENSE = 'MIT LICENSE <http://www.opensource.org/licenses/mit-license.php>' setmetatable(class,{__call = function(_,...) return _class(...) end })
 return class
 	end)()
-
+end
 -- new function
+if not NOT_NEW then
 new = function(InstanceClass, InstanceParent, ...)
 	-- Check if the arguments are correct
 	local InstanceClassType = type(InstanceClass)
@@ -76,8 +78,10 @@ new = function(InstanceClass, InstanceParent, ...)
 	
 	return ReturnedInstance
 end
+	end
 
 -- newScreenGui
+if not NOT_NEWSCREENGUI then
 function newScreenGui(name)
     local GUI = Instance.new("ScreenGui")
     GUI.ResetOnSpawn = false
@@ -99,8 +103,10 @@ function newScreenGui(name)
     
     return GUI
 end
+end
 
 -- newEvent
+if not NOT_NEWEVENT then
 function newEvent()
     return {
         Bin = Instance.new("BindableEvent"),
@@ -119,8 +125,23 @@ function newEvent()
         end
     }
 end
+end
 --
 
+-- s
+if not NOT_S then
+s = setmetatable({}, {
+    __index = function(self, key)
+        for i, v in ipairs(game:GetChildren()) do
+            if v.Name:lower()==key then
+                return v
+            end
+        end
+    end})
+end
+--
+
+if not NOT_UIFUNCS then
 -- addCornerRadius function
 function addCornerRadius(instance, amount)
 	local instanceType, amountType = typeof(instance), type(amount)
@@ -151,4 +172,5 @@ function addListLayout(instance, padding)
 	assert(paddingType == "number", ("addListLayout, number expected at argument #2, got %s"):format(paddingType))
 	
 	return new("UIListLayout", instance, {Padding = UDim.new(0, padding), SortOrder = Enum.SortOrder.LayoutOrder})
+end
 end
