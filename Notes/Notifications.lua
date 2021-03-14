@@ -1,3 +1,8 @@
+--
+-- WARNING:
+--  Dont use this garbage
+--
+
 ---- IT REQUIRES 30LOG LIBRARY!!!
 assert(class, "Please include 30log library")
 
