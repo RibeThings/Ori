@@ -287,7 +287,7 @@ function NotificationHolder:notificate(data)
 	return notif
 end
 
-function NotificationHandler:changeTheme(bgColor, textColor)
+function NotificationHolder:changeTheme(bgColor, textColor)
 	self.notifsBGColor = data.bgColor
 	self.notifsTextColor = data.textColor
 	
