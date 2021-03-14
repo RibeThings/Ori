@@ -57,6 +57,8 @@ NotificationTitleHeight = 15
 NotificationGreen = Color3.fromRGB(48, 220, 48)
 NotificationRed = Color3.fromRGB(220, 48, 48)
 
+NotificationColorbarHeight = 4
+
 Notification = class("Notification", {
 	parent = nil, -- : UIInstance
 
@@ -166,7 +168,7 @@ function Notification:init(parent, color, text, height, bgcolor, textcolor)
 	-- Create colorbar
 	self.colorbar = new("Frame", self.frame, {
 		Position = UDim2.fromScale(0, 1), AnchorPoint = Vector2.new(0, 1),
-		Size = UDim2.new(1, 0, 0, 4),
+		Size = UDim2.new(1, 0, 0, NotificationColorbarHeight),
 		BorderSizePixel = 0,
 	})
 	self:setColor(color)
