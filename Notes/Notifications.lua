@@ -78,7 +78,7 @@ function Notification:createTweens()
 	local ts = game:GetService("TweenService")
 
 	self.fadeTime = 0.2
-	local animInfo = TweenInfo.new(self.fadeInTime, Enum.EasingStyle.Sine, Enum.EasingDirection.In)
+	local animInfo = TweenInfo.new(self.fadeTime, Enum.EasingStyle.Sine, Enum.EasingDirection.In)
 
 		-- Create fade out tweens
 	table.insert(self.fadeOutTweens, ts:Create(self.frame, animInfo, {BackgroundTransparency = 1, Position = UDim2.fromOffset(0, 20)}))
